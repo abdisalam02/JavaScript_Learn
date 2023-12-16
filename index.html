@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <section  id="Gameover" style="display: none;">
+        <p class="paragraph">Game Over loser</p>
+        <!-- <button onclick="start()" id="start" >Play Again</button> -->
+        <a href="#start">Play Again</a>
+    </section>
+    <main id="main">
+        <!-- <header> How Well Do you Know Me ? </header> -->
+        <div id="points"><a>Points :<span id="points+">0</span></a></div>
+        <div id="lives"><a>Lives :<span id="lives+">5</span></a></div>
+        <section class="question">
+            <p class="paragraph">Are you ready ?</p>
+            <button onclick="start()" id="start" >Start</button>
+        </section>
+        <video id="videoWrong" src="dad and son looking at each other httpst.coa8rRNiP5TN.mp4" preload="auto" muted controls autoplay loop style="display: none;"></video>
+
+        <section class="question" style="display: none;">
+            <h1>Who are you ?</h1>
+            <p>What is Your name ?</p>
+            <p id="playernameFed"></p>
+            <input id="playername" type="text" placeholder="Enter Your Name">
+            <button onclick="playername() "class="submit">Submit</button>
+            <button id="next" >Next</button>
+        </section>
+        <section class="question" style="display: none;">
+            <h1>Question 1</h1>
+            <p>Guess a number between 1 and 10</p>
+            <input id="answer" type="text">
+            <button onclick="randomNumber()" class="submit">Submit</button>
+            <p id="feedback"></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+        </section>
+        <section class="question" style="display: none;">
+            <!-- <input id="answer" type="text"> -->
+            <section id="answers">
+                <h1>Question 2</h1>
+                <p>How old am I ?</p>
+                <p class="correctOrWrong" style="display: none;"></p>
+                <div class="buttonChoices">
+                    <button onclick="Answer(this)" class="answerFalse answer age" data-question="2"> 19</button>
+                    <button onclick="Answer(this)" class="answerFalse answer age" data-question="2"> 20</button>
+                    <button onclick="Answer(this)" class="answerFalse answer age" data-question="2"> 21</button>
+                    <button onclick="Answer(this)"class="answerTrue answer age" data-question="2"> 21.5</button>
+                </div>
+            <p id="feedback2"></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+        </section>
+        </section>
+        <section class="question" style="display: none;">
+            <!-- <input id="answer" type="text"> -->
+            <section id="answers">
+                <h1>Question 3</h1>
+                <p>Where was i born ?</p>
+                <p class="correctOrWrong" style="display: none;"></p>
+                <div class="buttonChoices">
+                    <button onclick="Answer(this)"class="answerTrue answer city one" data-question="3"> Ålesund, Norway</button>
+                    <button onclick="Answer(this)" class="answerFalse answer city two" data-question="3"> Oslo, Norway</button>
+                <button onclick="Answer(this)" class="answerFalse answer city three" data-question="3"> Nairobi, Kenya</button>
+                <button onclick="Answer(this)"class="answerFalse answer city four" data-question="3"> Mogadishu, Somalia</button>
+                </div>
+            <p id="feedback3"></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+            <img id="correctAnswer" src="https://www.icegif.com/wp-content/uploads/2023/05/icegif-1097.gif" alt="confetti" style="display: none;">
+        </section>
+        </section>
+        <section class="question" style="display: none;">
+            <section id="answers">
+            <h1>Question 1</h1>
+            <p>Find the button</p>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerTrue" data-question="4"> Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <button onclick="Answer(this)" class="submit2 answerFalse" data-question="4">Here</button>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <p id="feedback"></p>
+            <button id="previous" >Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+        </section>
+        </section>
+        <section class="question" style="display: block;">
+            <h1>Question 4</h1>
+            <p>Whats something i say when i have no response ?</p>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <input id="answer2" placeholder="example:wowww">
+            <button onclick="inputAnswer()" class="answer submit" data-question="5">Submit</button>
+            <p id="feedback4.5"></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+
+        </section>
+        <section class="question" style="display: none;">
+            <h1>Question 5</h1>
+            <p>What are other hobbies i have tried ?</p>
+            <a id="hobbieList"></a>
+            <input id="answer3" placeholder="example:swimming">
+            <button onclick="Hobbie()" class="answer submit" data-question="">Submit</button>
+            <p id="hobbieFeedback" ></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+
+        </section>
+        <section class="question" style="display: block;">
+            <h1>Question 6</h1>
+            <p>Favourite Colour?</p>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <button onclick="Answer(this)" class="answerFalse answer green" data-question="6">Green</button> 
+            <button onclick="Answer(this)" class="answerFalse answer black " data-question="6">Black</button> 
+            <button onclick="Answer(this)" class="answerFalse answer red" data-question="6">Red</button> 
+            <button onclick="Answer(this)" class="answerFalse answer blue" data-question="6">Blue</button> 
+            <button onclick="Answer(this)" class="answerFalse answer yellow" data-question="6">Yellow</button> 
+            <button onclick="Answer(this)" class="answerTrue answer purple" data-question="6">Purple</button> 
+            <p id="feedback6" data-feedback="6" ></p>
+            <button id="previous" onclick="previousQuestion()">Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+        </section>
+        <section class="question" style="display: none;">
+            <h1>Question 6</h1>
+            <p>What did i nearly choke and die on as a child ?</p>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <div class="imgquestion2">
+
+                <button  onclick="Answer(this)" class="answerFalse answer choke " data-question="7">
+                    <img class="image" src="https://frugalfun4boys.com/wp-content/uploads/2016/06/Brick-Link-FB-Edited.jpg" alt="">
+                    </button> 
+
+                    <button onclick="Answer(this)" class="answerFalse answer choke " data-question="7">
+                        <img class="image" src="https://babygooroo-production.s3.amazonaws.com/slide_images/c5a7b970-ad4b-4cac-83c9-4a7e97775c5d.png" alt="">
+                    </button> 
+
+                    <button onclick="Answer(this)" class="answerTrue answer choke " data-question="7">
+                        <img class="image" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9zdGF0aWMvaW1hZ2VzL3dlYnNpdGUvMjAyMy0wNC9mcmRhcmlheWFrb3ZsZXZhMDAxMzYtaW1hZ2UtMDMtam9iMTgyMV8zLnBuZw.png" alt="">
+                    </button> 
+
+                    <button onclick="Answer(this)" class="answerFalse answer choke " data-question="7">
+                        <img class="image" src="https://chefjar.com/wp-content/uploads/2021/05/popeyes-biscuits-011.jpg" alt="">
+                    </button> 
+                    <button onclick="Answer(this)" class="answerFalse answer choke " data-question="7">
+                        <img class="image" src="https://kampalaarcade.com/wp-content/uploads/2022/10/grapes-green1.jpeg" alt="">
+                    </button> 
+                    <p id="feedback7" data-feedback="7" ></p>
+                    
+                    
+                </div>
+                <button id="previous" onclick="previousQuestion()">Previous</button>
+                <button id="next" onclick="nextQuestion()">Next</button>
+        </section>
+        <section class="question" id="question1" style="display: none;">
+            <h1> Watch the Video and guess what happens nexttt</h1>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <div class="imgquestion">
+                <p id="feedback8" data-feedback="8" ></p>
+                <div id="videos">
+
+                    <video class="video1" src="Snapchat-1190718833~2.mp4" controls autoplay muted  style="display: grid;"></video>
+                    <video class="video2" src="Snapchat-1190718833.mp4" controls autoplay muted style="display: none;"></video>
+
+                </div>
+                <div id="buttonAnswers">
+                    
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="8">Falls off and hits his head</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer " data-question="8">I throw a Gym ball at him</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="8">Hits his head on the bicycle behind him</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="8">Mf just dies........</button> 
+                    <button onclick="Answer(this)" class="answerTrue answer" data-question="8">Spreads his legs like a whore</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="8">None of the above</button> 
+                    <button class="ShowVideo" onclick="guessVid('question1')">Show What Happens Next</button>
+                </div>
+            </div>
+            <p class="correctOrWrong" style="display: none;"></p>
+            <button id="previous" onclick="previousQuestion()"> >Previous</button>
+                <button id="next" onclick="nextQuestion()">Next</button>
+
+        </section>
+        <section class="question" id="question2" style="display: none;">
+            <h1> Watch the Video and guess what happens nexttt</h1>
+            <div class="imgquestion">
+                <p id="feedback8" data-feedback="9" ></p>
+                <div id="videos">
+
+                    <video class="video1" src="Explotion1.mp4" controls autoplay muted  style="display: grid;"></video>
+                    <video class="video2" src="Explotion2.mp4" controls autoplay muted style="display: none;"></video>
+
+                </div>
+                <div id="buttonAnswers">
+                    
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="9">I get kicked out of the store</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer " data-question="9">i fall</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="9">I break that thing</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="9">The lights turn off</button> 
+                    <button onclick="Answer(this)" class="answerTrue answer" data-question="9">Exsplotion , thats a lot of damage</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="9">None of the above</button> 
+                    <button class="ShowVideo" onclick="guessVid('question2')">Show What Happens Next</button>
+                </div>
+        </div>
+        <p class="correctOrWrong" style="display: none;"></p>
+        <button id="previous" onclick="previousQuestion()" >Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+        </section>
+        <section class="question" id="question3"  style="display: none;">
+            <h1> Watch the Video and guess what happens nexttt</h1>
+            <div class="imgquestion">
+                <p id="feedback8" data-feedback="9" ></p>
+                <div id="videos">
+
+                    <video class="video1" src="Cling1.mp4" controls autoplay muted style="display: grid;"></video>
+                    <video class="video2" src="Cling2.mp4" controls autoplay muted style="display: none;"></video>
+
+                </div>
+                <div id="buttonAnswers">
+                    
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="10">All the below</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer " data-question="10">Everyone yells at me</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="10">Someone throws a Kebab at me</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="10">The glass breaks......</button> 
+                    <button onclick="Answer(this)" class="answerTrue answer" data-question="10">Barely anyone looks at me</button> 
+                    <button onclick="Answer(this)" class="answerFalse answer" data-question="10">None of the above</button> 
+                    <button class="ShowVideo" onclick="guessVid('question3')">Show What Happens Next</button>
+                </div>
+            </div>
+            <p class="correctOrWrong" style="display: none;"></p>
+        <button id="previous" onclick="previousQuestion()" >Previous</button>
+            <button id="next" onclick="nextQuestion()">Next</button>
+
+        </section>
+        <section class="question" style="display: block;">
+            <h1>Results</h1>
+            <p id="results"></p>
+            <!-- <input id="playername" type="text" placeholder="Enter Your Name"> -->
+            <!-- <button onclick="playername()">Submit</button>
+            <button id="next" onclick="nextQuestion()">Next</button> -->
+        </section>
+        <section class="question" style="display: none;">
+            <h1>Navigate to questions</h1>
+            <p id="navigate"></p>
+            <!-- <input id="playername" type="text" placeholder="Enter Your Name"> -->
+            <!-- <button onclick="playername()">Submit</button>
+            <button id="next" onclick="nextQuestion()">Next</button> -->
+        </section>
+        <!-- <script>
+            for (let i = 0; i < 50; i++) {
+const button = document.createElement("button");
+button.textContent = "Submit";
+button.className = "submit2 answerFalse";
+button.onclick = function() {
+  Answer(this);
+};
+
+document.body.appendChild(button);
+}
+        </script> -->
+    </main>
+
+    <script>
+
+        function Gameover(){
+             gameover = document.getElementById("Gameover")
+            lives = document.getElementById("lives+")
+            main = document.getElementById("main")
+            if(parseInt(lives.innerText) === 0){
+                
+                gameover.style.display = "block"
+                main.style.display = "none"
+            }
+        }
+
+        Gameover()
+
+        
+        
+        // document.getElementsByTagName("button").addEventListener("click", function(){
+            
+        //     buttons.style.backgroundColor = "red"
+        // })
+    
+        // const answers = document.getElementById("answers")
+        // const answerTrue = document.getElementsByClassName("answerTrue")
+        // const answerFalse = document.getElementsByClassName("answerFalse")
+
+        
+        // function addClass(feed, feedW){
+        //     feed = document.getElementById("feedbackRight")
+        //     feedW = document.getElementById("feedbackWrong")
+
+
+        //     if (feed.classList.contains("correct")){
+
+        //         feed.style.display="block"  
+        //     } else if(feed.classList.contains("wrong")){
+                
+        //         feedW.style.display="block"
+        //     } 
+        //     else{
+        //         feed.style.display="none"
+        //         feedW.style.display="none"
+        //     }
+        // }
+    
+        
+        function Answer(button){
+            // Feedback2 = document.getElementById("feedback2")
+            // yesss = document.getElementById("yessss")
+            confetti = document.getElementById("correctAnswer")
+
+            // let Points = 0 
+            Points = document.getElementById("points")
+             pointsPoints = document.getElementById("points+")
+            VideoWrong = document.getElementById("videoWrong")
+            const section = button.closest('.question');
+            // CorrectWrong = document.getElementById("correctOrWrong")
+             CorrectWrong = section.querySelectorAll('.correctOrWrong');
+
+            CorrectWrong.forEach((CorrectWrong) => {
+
+             
+            Lives = document.getElementById("lives+")
+            // button = document.getElementsByClassName("city")
+                if (button.classList.contains("answerTrue")){
+                    // Feedback2.innerHTML = "Correct Answer"
+                    button.style.backgroundColor = "green" 
+                    pointsPoints.innerHTML = parseInt(pointsPoints.innerHTML) + 1
+                    CorrectWrong.innerHTML = "Correct Answer"
+                    CorrectWrong.style.backgroundColor = "green"
+                    CorrectWrong.style.display= "block"
+                    // yesss.style.display = "block"
+                    setTimeout(() =>{
+                        // button.style.backgroundColor = "white"
+                    }, 2000);
+                    console.log("Correct answer")
+                    // classList.add("finished")
+                    confetti.style.display = "block"
+                    setTimeout(() =>{
+                        confetti.style.display = "none"
+                    }, 2000);
+                } else {
+                    
+                 console.log("Wrong answer")
+                //  Feedback2.innerHTML = " Wrong Answer"
+                CorrectWrong.innerHTML = "Wrong Answer"
+                CorrectWrong.style.backgroundColor = "red"
+                CorrectWrong.style.display= "block"
+                 button.style.backgroundColor = "red"
+                 VideoWrong.style.display = "flex"
+                 setTimeout(() =>{
+                     
+                     VideoWrong.style.display = "none"
+                 }, 2000)
+                 Lives.innerHTML = parseInt(Lives.innerHTML) - 1
+                 setTimeout(() =>{
+                        // button.style.backgroundColor = "white"
+                    }, 2000);
+                    
+                }
+            });
+
+            playername()
+        }
+
+        // function playername(){
+            
+        // }
+        // let Playername = document.getElementById("playername").value
+        
+
+        function randomNumber (feed, feedW){
+        
+            Feedback = document.getElementById("feedback")
+        var Answer = document.getElementById("answer")  
+        let num = Math.floor(Math.random() * 10) + 1
+        let userGuess = parseInt(Answer.value, 10);
+        VideoWrong = document.getElementById("videoWrong")
+        
+
+        if (userGuess === num){
+            console.log( num + " " +  "Correct number")
+            Feedback.innerHTML =  num + " " +  "Correct number"
+        } else{
+            console.log( "Wrong number, The answer was "+ "" + num)
+            Feedback.innerHTML =  "Wrong number, The answer was "+ "" + num
+            VideoWrong.style.display = "flex"
+                 setTimeout(() =>{
+                     
+                     VideoWrong.style.display = "none"
+                 }, 2000)
+        }
+        }
+
+        function inputAnswer(CorrectWrong){
+            let Answer2 = document.getElementById("answer2")
+            let feedback2 = document.getElementById("feedback4.5")
+            // CorrectWrong = document.querySelectorAll(".correctOrWrong")
+            values = ["thats crazy", "really"]
+            if (values.includes(Answer2.value.toLowerCase())){
+                console.log("correct answer")
+                feedback2.innerHTML = "hehehehhe" + " " + Answer2.value
+                CorrectWrong.innerHTML = "Correct Answer"
+                    CorrectWrong.style.backgroundColor = "green"
+                    CorrectWrong.style.display= "block"
+            } else{
+                    console.log("Wrong answer")
+                    feedback2.innerHTML = "ion know about" + " " + Answer2.value
+                }
+        }
+
+        
+        function Hobbie(){
+            Hobbies = ["reading","cooking"]
+            AnswerHobbies = ["painting", "drawing","gym", "skating","sleeping","eating" ]
+
+            Answer3 = document.getElementById("answer3")
+            HobbieList = document.getElementById("hobbieList")
+            feedback = document.getElementById("hobbieFeedback")
+            li = document.createElement("li")
+            
+            
+            // button = document.getElementById("button")
+            // HobbieList.innerHTML = Hobbies
+        
+            if (Hobbies.includes(Answer3.value.toLowerCase())){
+                console.log("Hobbie is mentioned") 
+                feedback.innerHTML =  Answer3.value + " "  + "is mentioned" 
+            } 
+            else if(AnswerHobbies.includes(Answer3.value.toLowerCase())){
+                // button.classList.add("answerTrue")
+                Hobbies.push(Answer3.value)
+                feedback.innerHTML = "i have tried" + " " + Answer3.value
+                List = "<ul>" +`<li>${Answer3.value}</li>`+ "</ul>";
+                HobbieList.innerHTML += List;
+                console.log( Hobbies)
+            } 
+            else {
+                console.log( "do i look like ive tried" + " " + Answer3.value)
+                feedback.innerHTML = "do i look like i do " + " " + Answer3.value
+            }
+            // List = "<ul>" + Hobbies.map(Hob => `<li>${Hob}</li>`).join("") + "</ul>";
+
+        };
+
+        CorrectOutput ={
+
+            '2': 'Yes i am like that heheheheheheh',
+            '3': 'Correct answer, i do have a confusing upbringing',
+            '4': 'hurrrrrrayyyyy',
+            '5': 'Correct answer, i do have a confusing upbringing',
+            '5': 'Correct answer, i do have a confusing upbringing',
+            '6': 'yurrt i like purple',
+            '7': 'soooo i used to like detaching the lolipop form the stick and just keep it in my mouth, annnd yeah it slipped down my throught and got stuck for a good minute or sm',
+            '8': 'yurrt i like purple',
+        }
+        WrongOutput ={
+
+        '2': 'Ackchually, guess again ',
+        '3': 'this is wrong reply 3',
+        '4': 'eehhhhhhhhhh, Wronggggggggg',
+        '6': 'this is wrong reply 4',
+        '7': 'soooo i used to like detaching the lolipop form the stick and just keep it in my mouth, annnd yeah it slipped down my throught and got stuck for a good minute or sm',
+
+        }
+
+
+        document.querySelectorAll(".answer").forEach(button => {
+
+            button.addEventListener("click", function(){
+                const Questionid = button.getAttribute("data-question")
+                const Replyid = button.getAttribute("data-feedback")
+                const Points = document.getElementById("points")
+                const Lives = document.getElementById("lives")
+
+                const feedbackElement = document.getElementById(`feedback${Questionid}`)
+                const ReplyElement = document.getElementById(`reply${Replyid}`)
+
+
+                const isCorrect = this.classList.contains("answerTrue");
+
+                if (isCorrect) {
+            // feedbackElement.innerHTML = 'Correct Answer';
+            feedbackElement.classList.add('correct');
+            feedbackElement.innerHTML = CorrectOutput[Questionid];
+            // feedbackElement.style.display = "block";
+            //      setTimeout(() =>{
+                     
+            //         feedbackElement.style.display = "none";
+            //      }, 2000)
+            // Points.innerHTML = parseInt(Points.innerHTML) + 1
+            // Handle other correct answer logic
+
+        } else {
+            feedbackElement.innerHTML = WrongOutput[Questionid];
+            feedbackElement.classList.add('wrong');
+            feedbackElement.style.display = "flex";
+                 setTimeout(() =>{
+                     
+                    feedbackElement.style.display = "none";
+                    
+                 }, 2000)
+            // Lives.innerHTML = parseInt(Lives.innerHTML) - 1
+            // Handle other wrong answer logic
+        }
+    })
+});
+
+// next = document.getElementById("next")
+// next.addEventListener("click", function(){
+
+//     Questionid ++
+
+    
+    
+// })
+
+let questionIndex = 0;
+
+function loadquestion(Questionid){
+
+const questions = document.querySelectorAll(".question");
+
+questions.forEach(( question, index) => {
+    
+    question.style.display = index === Questionid ? "block" : "none";
+});
+
+
+questionIndex = Questionid
+// questions.style.display = "none";
+
+// Main = document.getElementById("Main")
+// Main.innerHTML = questions[questionIndex]
+
+
+}
+
+// loadquestion(questionIndex)
+function nextQuestion(){
+
+const total = document.querySelectorAll(".question").length;
+questionIndex = (questionIndex + 1) % total;
+loadquestion(questionIndex)
+
+document.getElementById("next").addEventListener("click", nextQuestion);
+
+}
+
+// next = document.getElementById("next")
+// next.addEventListener("click",nextQuestion);
+
+
+function previousQuestion(){
+
+const total = document.querySelectorAll(".question").length;
+questionIndex = (questionIndex - 1) % total;
+loadquestion(questionIndex)
+
+document.getElementById("previous").addEventListener("click", previousQuestion);
+
+}
+
+// previous = document.getElementById("previous")
+// previous.addEventListener("click", function(){
+// previousQuestion
+// })
+
+function start(questionIndex){
+
+    start = document.getElementById("start")
+
+    // start.addEventListener("click",loadquestion(questionIndex));
+    nextQuestion()
+
+}
+
+
+
+
+function guessVid (questionId){
+
+    Video = document.getElementById(questionId).getElementsByClassName("video1")
+    Video2 = document.getElementById(questionId).getElementsByClassName("video2")
+    Press = document.getElementById("ShowVideo")
+
+    for (i = 0; i < Video.length; i++) {
+        Video[i].style.display = "none"
+        
+    }
+    for (j = 0; j < Video.length; j++) {
+        Video2[j].style.display = "grid"
+        
+    }
+
+// Video2.style.display = "block"
+// Video.style.display = "none"
+
+// guessVid(Video, Video2)
+    
+// Press.addEventListener("click", guessVid())
+}
+
+// document.getElementById("ShowVideo").addEventListener("click", guessVid())
+
+
+function playername(){
+            Playername = document.getElementById("playername").value
+            console.log(Playername)
+
+            results = document.getElementById("results")
+            playernameELM = document.getElementById("playername")
+            pointsPoints = document.getElementById("points+")
+            player = document.getElementById("playernameFed")
+
+            player.innerHTML = "Welcome"+ " " + Playername + " " + "!" + " " + "Press  next to continue "
+
+             points = parseInt(pointsPoints.innerHTML);
+            playernameELM.innerHTML = Playername
+            // results.innerHTML =  Playername + " " + "your score is " + " " + parseInt(points);
+            results.innerHTML = `${Playername}, your score is ${points}`;
+        }
+        // playername()
+
+ 
+
+        // Answer();
+
+
+
+
+    </script>
+</body>
+</html>
