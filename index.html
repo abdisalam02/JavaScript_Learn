@@ -13,7 +13,7 @@
         <a href="#start">Play Again</a>
     </section>
     <main id="main">
-        <!-- <header> How Well Do you Know Me ? </header> -->
+        <header> How Well Do you Know Me ? </header>
         <div id="points"><a>Points :<span id="points+">0</span></a></div>
         <div id="lives"><a>Lives :<span id="lives+">5</span></a></div>
         <section class="question">
@@ -57,7 +57,7 @@
             <button id="next" onclick="nextQuestion()">Next</button>
         </section>
         </section>
-        <section class="question" style="display: none;">
+        <section class="question" style="display: block;">
             <!-- <input id="answer" type="text"> -->
             <section id="answers">
                 <h1>Question 3</h1>
@@ -94,7 +94,7 @@
             <button id="next" onclick="nextQuestion()">Next</button>
         </section>
         </section>
-        <section class="question" style="display: block;">
+        <section class="question" style="display: none ;">
             <h1>Question 4</h1>
             <p>Whats something i say when i have no response ?</p>
             <p class="correctOrWrong" style="display: none;"></p>
@@ -166,7 +166,6 @@
         </section>
         <section class="question" id="question1" style="display: none;">
             <h1> Watch the Video and guess what happens nexttt</h1>
-            <p class="correctOrWrong" style="display: none;"></p>
             <div class="imgquestion">
                 <p id="feedback8" data-feedback="8" ></p>
                 <div id="videos">
@@ -337,7 +336,7 @@ document.body.appendChild(button);
             // button = document.getElementsByClassName("city")
                 if (button.classList.contains("answerTrue")){
                     // Feedback2.innerHTML = "Correct Answer"
-                    button.style.backgroundColor = "green" 
+                    // button.style.backgroundColor = "green" 
                     pointsPoints.innerHTML = parseInt(pointsPoints.innerHTML) + 1
                     CorrectWrong.innerHTML = "Correct Answer"
                     CorrectWrong.style.backgroundColor = "green"
@@ -359,7 +358,7 @@ document.body.appendChild(button);
                 CorrectWrong.innerHTML = "Wrong Answer"
                 CorrectWrong.style.backgroundColor = "red"
                 CorrectWrong.style.display= "block"
-                 button.style.backgroundColor = "red"
+                //  button.style.backgroundColor = "red"
                  VideoWrong.style.display = "flex"
                  setTimeout(() =>{
                      
@@ -470,10 +469,10 @@ document.body.appendChild(button);
         WrongOutput ={
 
         '2': 'Ackchually, guess again ',
-        '3': 'this is wrong reply 3',
+        '3': 'Really buddy?????',
         '4': 'eehhhhhhhhhh, Wronggggggggg',
-        '6': 'this is wrong reply 4',
-        '7': 'soooo i used to like detaching the lolipop form the stick and just keep it in my mouth, annnd yeah it slipped down my throught and got stuck for a good minute or sm',
+        '6': 'ewwwwwwwwwwwww nahhhhhhhh',
+        '7': 'wtf noooo hahahaha',
 
         }
 

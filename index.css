@@ -42,6 +42,8 @@ font-family: fantasy;
     #start:hover {
         box-shadow: 4px 4px 0 #000;
         transform: translate(-4px,-4px);
+        background-color: rgb(194, 138, 216);
+
     }
     #start:focus-visible{
         outline-offset: 1px;
@@ -101,25 +103,41 @@ main{
     padding: 100px;
     margin: 20px;
     color: white;
-    background-color:#302b63;
+    /* background-color:#2b596385; */
+    background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
     font-size: 15px;
+    transition: width 1s, height 1s;
+    width: 400px;
+    height: 250px;
 }
 
 .one:hover{
     background: url(https://www.hurtigruten.co.uk/globalassets/photos/ports/alesund/norway_alesund_summer_hgr_163708_getty_images.jpg?width=1900&height=950&transform=DownFill);
     background-size: cover;
+    width: 450px;
+    height: 300px;
+    cursor: pointer;
     }
     .two:hover{
         background: url(https://www.fjordtravel.no/wp-content/uploads/2019/05/Oslo-Opera-House-by-Thomas-Johannessen-Visit-Oslo-1024x681.jpg);
         background-size: cover;
+        width: 450px;
+        height: 300px;
+        cursor: pointer;
         }
         .three:hover{
             background: url(https://www.andbeyond.com/wp-content/uploads/sites/5/giraffe-and-sky-line-nairobi.jpg);
             background-size: cover;
+            width: 450px;
+            height: 300px;
+            cursor: pointer;
             }
             .four:hover{
                 background: url(https://sonna.so/en/wp-content/uploads/2023/09/Mogadishu.jpg);
                 background-size: cover;
+                width: 450px;
+                height: 300px;
+                cursor: pointer;
                 }
                     
 section  {
@@ -295,6 +313,9 @@ input:hover{
     border-radius: 5px;
     margin: 5px;
     font-size: 20px;
+    width: 400px;
+    height: 200px;
+    transition: width 1s ;
 }
 
 .green{
@@ -305,6 +326,7 @@ input:hover{
     background-color: rgb(70, 198, 70);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
 }
 .black{
     background-color: rgb(19, 19, 19);
@@ -315,6 +337,8 @@ input:hover{
     background-color: rgb(53, 52, 52);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
+   
  }
 .red{
     background-color: rgb(236, 50, 50);
@@ -324,6 +348,7 @@ input:hover{
     background-color: rgb(227, 27, 27);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
 }
 .purple{
     background-color: rgb(211, 31, 211);
@@ -333,6 +358,8 @@ input:hover{
     background-color: rgb(232, 68, 232);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
+   
 }
 .yellow{
     background-color: yellow;
@@ -342,6 +369,7 @@ input:hover{
     background-color: rgb(230, 230, 55);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
 }
 .blue{
     background-color: rgb(72, 72, 232);
@@ -351,6 +379,7 @@ input:hover{
     background-color: rgb(41, 41, 238);
     cursor: pointer;
     transform: translate(0, -10px);
+    width: 450px;
 }
 
 /* .IMAGE{
