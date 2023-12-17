@@ -57,7 +57,7 @@
             <button id="next" onclick="nextQuestion()">Next</button>
         </section>
         </section>
-        <section class="question" style="display: block;">
+        <section class="question" style="display: none;">
             <!-- <input id="answer" type="text"> -->
             <section id="answers">
                 <h1>Question 3</h1>
@@ -118,7 +118,7 @@
 
 
         </section>
-        <section class="question" style="display: block;">
+        <section class="question" style="display:none;">
             <h1>Question 6</h1>
             <p>Favourite Colour?</p>
             <p class="correctOrWrong" style="display: none;"></p>
@@ -242,7 +242,7 @@
             <button id="next" onclick="nextQuestion()">Next</button>
 
         </section>
-        <section class="question" style="display: block;">
+        <section class="question" style="display: none;">
             <h1>Results</h1>
             <p id="results"></p>
             <!-- <input id="playername" type="text" placeholder="Enter Your Name"> -->
@@ -276,11 +276,17 @@ document.body.appendChild(button);
              gameover = document.getElementById("Gameover")
             lives = document.getElementById("lives+")
             main = document.getElementById("main")
-            if(parseInt(lives.innerText) === 0){
-                
+            console.log(lives.innerHTML)
+            if(lives.innerHTML === "0"){
                 gameover.style.display = "block"
                 main.style.display = "none"
             }
+
+            // if(parseInt(lives.innerText) === 0){
+                
+            //     gameover.style.display = "block"
+            //     main.style.display = "none"
+            // }
         }
 
         Gameover()
